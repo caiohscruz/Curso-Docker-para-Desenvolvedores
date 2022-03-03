@@ -21,8 +21,14 @@
   - `docker inspect <container>` = inspeciona informações como id, data de criação, imagem e muito mais
 - Imagens
   - `docker build <path>` = cria uma imagem, path é onde o Dockerfile se encontra
+    - flag `-t <name>:<tag>` = para dar nome e tag (opcional) 
   - `docker image` = para listar as imagens
   - `docker rmi <image>` = exclui uma imagem
 - Geral
   - `docker system prune` = remove tudo quanto é imagem, container ou network não utilizado
   - `docker status` = consulta quantos recursos estão sendo alocados para os containers
+  - `docker login` = autentica com o hub docker
+  - `docker logout` = desautentica com o hub docker
+  - `docker push <repository>` = para subir uma imagem para o hub, o nome da imagem deve ser o mesmo do repositório
+    - `repository:tag` = o versionamento é feito com a tag
+  - `docker pull <repository>` = para clonar uma imagem do hub, o nome da imagem deve ser o mesmo do repositório
