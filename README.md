@@ -9,8 +9,9 @@
     - flag `-d` = detached - mantem container rodando em background
     - flag `-it` = interative - mantem container rodando no console
     - flag `-p x:y` = seta porta para comunicação, sendo x a porta externa e y a porta do container
-    - flag `--name` = para dar um nome personalizado para um container
+    - flag `--name <name>` = para dar um nome personalizado para um container
     - flag `--rm` = remove o container após execução
+    - flag `--network <network>` = indica network a utilizar
   - `docker start <container>` = roda container criado previamente
   - `docker stop <container>` = para a execução de um container
   - `docker ps` =  consulta os container em execução
@@ -40,5 +41,12 @@
   - `docker (container/image/volume) prune` = remove o que não está sendo utilizado
   - `docker (container/image/volume) rm <name>` = remove um elemento
     - flag `-f` = força a exclusão, caso o container esteja em execução
-  
-  
+- Container com MySQL
+  - flag `-e MYSQL_ALLOW_EMPTY_PASSWORD=True` no `docker run` = permite uso de senha vazia
+
+  Exemplos:
+  - `docker exec -it phpmessages_container bash`
+  - `docker run -d -p 82:80 --name phpmessages_container -v phpvolume:/var/www/html/messages --rm phpmessages`
+  - `docker network create flasknetwork`
+  - `docker build -t flaskapinetwork .`
+  - `docker run -d -p 5000:5000 --name flask_api_container --network flasknetwork --rm flaskapinetwork`
