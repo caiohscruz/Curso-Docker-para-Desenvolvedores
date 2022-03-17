@@ -1,0 +1,21 @@
+nome: "Caio"
+idade: 28
+
+arr1: [1, 2, 3]
+arr2:
+  - 4
+  - 5
+  - 6
+
+verdadeiro1: True
+verdadeiro2: On
+
+falso1: False
+falso2: Off
+
+dict1: {a: 1, b: 2, c: 3}
+dict2: 
+  d: 4
+  e: 5
+  f: 6
+
