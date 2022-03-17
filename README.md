@@ -28,6 +28,11 @@
   - `docker run -v <dir_out>:/<dir_container>` = vincula um diretório externo como volume, dir_out é o caminho absoluto do diretório
     - flag `:ro` = cria volume somente leitura, flag vem colada logo atrás do identificador
   - `docker volume create <name>` = para criar volume sem ser na criação de um container
+- Networks
+  - `docker network create <name>` = remove tudo quanto é imagem, container ou network não utilizado
+  - `docker network connect <rede> <container>` = conecta um conteiner a uma rede
+  - `docker network disconnect <rede> <container>` = disconecta um conteiner de uma rede
+  - `docker network inspect <rede>` = inspeciona uma rede
 - Geral
   - `docker system prune` = remove tudo quanto é imagem, container ou network não utilizado
   - `docker status` = consulta quantos recursos estão sendo alocados para os containers
@@ -47,6 +52,14 @@
   Exemplos:
   - `docker exec -it phpmessages_container bash`
   - `docker run -d -p 82:80 --name phpmessages_container -v phpvolume:/var/www/html/messages --rm phpmessages`
-  - `docker network create flasknetwork`
   - `docker build -t flaskapinetwork .`
   - `docker run -d -p 5000:5000 --name flask_api_container --network flasknetwork --rm flaskapinetwork`
+
+  YAML
+  - `null` ou `~` = representam o nulo
+  - `True` ou `On` = representam verdadeiro
+  - `False` ou `Off` = representam falso
+  - string pode ser declarada com ou sem aspas
+  - `[1, 2, 3]` ou  (`obj:` \n ` - item`) = formas de representar arrays 
+  - `{a: 1, b: 2, c: 3}` ou  (`obj:` \n ` key: value`) = formas de representar dicionários/objetos 
+
