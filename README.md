@@ -33,6 +33,11 @@
   - `docker network connect <rede> <container>` = conecta um conteiner a uma rede
   - `docker network disconnect <rede> <container>` = disconecta um conteiner de uma rede
   - `docker network inspect <rede>` = inspeciona uma rede
+- Compose
+  - `docker-compose up` = executa o compose
+  - `docker-compose down` = derruba os containers
+
+    - flag `-d` = detached - mantem container rodando em background
 - Geral
   - `docker system prune` = remove tudo quanto é imagem, container ou network não utilizado
   - `docker status` = consulta quantos recursos estão sendo alocados para os containers
