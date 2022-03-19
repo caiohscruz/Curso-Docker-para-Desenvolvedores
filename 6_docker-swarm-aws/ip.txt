@@ -1,0 +1,7 @@
+ssh -i "node1.pem" ec2-user@ec2-34-227-177-118.compute-1.amazonaws.com
+
+ssh -i "node1.pem" ec2-user@ec2-54-165-240-49.compute-1.amazonaws.com
+
+ssh -i "node1.pem" ec2-user@ec2-54-211-109-106.compute-1.amazonaws.com
+
+docker swarm join --token SWMTKN-1-3r9sd56uv20tcfrbtlaz5ozjrkknnms7i9405bpzrik26so59f-epwnbsaaxarfcoifpy7uqaqse 172.31.87.249:2377
