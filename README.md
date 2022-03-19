@@ -70,3 +70,21 @@
   - `[1, 2, 3]` ou  (`obj:` \n ` - item`) = formas de representar arrays 
   - `{a: 1, b: 2, c: 3}` ou  (`obj:` \n ` key: value`) = formas de representar dicionários/objetos 
 
+  Setup Docker Swarm na AWS
+  - `sudo yum update -y` = atualiza a máquina
+  - `sudo yum install docker` = instala docker
+  - `sudo service docker start` = inicializa docker
+  - `sudo usermod -a -G docker ec2-user` = vincula usuário
+  - `sudo docker swarm init` =  inicia swarm
+    - tag `--advertise-addr <IP>` =  caso solicite por IP
+  - `sudo docker swarm leave` = interrompe swarm
+    - tag `-f` = caso dê erro relacionado com Manager
+
+  Docker Swarm
+  - `docker node ls` = lista os nodes com seus status
+  - `docker swarm join --token <TOKEN> <IP>:<PORTA>` = adiciona worker
+
+  Dica para terminal
+  - `Crtl + Shift + C` ou `Crtl + Insert` em vez de `Crtl + C`
+  - `Crtl + Shift + V` ou `Shift + Insert`em vez de `Crtl + V`
+
