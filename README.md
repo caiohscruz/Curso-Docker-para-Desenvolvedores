@@ -19,6 +19,8 @@
   - `docker cp <name>:<path_in> <path_out>` = copia um arquivo de dentro de um container para fora
   - `docker top <container>` = consulta os processos rodando no container
   - `docker exec -it <container> bash` = permite abrir terminal interativo de container em execução
+  - `docker kill $(docker ps -q)` = para a execução de todos os containers
+  - `docker rm $(docker ps -a -q)` = para a execução de todos os containers e os remove
 - Imagens
   - `docker build <path>` = cria uma imagem, path é onde o Dockerfile se encontra
     - flag `-t <name>:<tag>` = para dar nome e tag (opcional) 
@@ -36,7 +38,7 @@
 - Compose
   - `docker-compose up` = executa o compose
   - `docker-compose down` = derruba os containers
-
+  - `docker-compose ps` = lista containers gerenciados pelo compose
     - flag `-d` = detached - mantem container rodando em background
 - Geral
   - `docker system prune` = remove tudo quanto é imagem, container ou network não utilizado
