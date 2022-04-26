@@ -82,7 +82,28 @@
 
   Docker Swarm
   - `docker node ls` = lista os nodes com seus status
+  - `docker node rm <id>` = remove node do swarm
   - `docker swarm join --token <TOKEN> <IP>:<PORTA>` = adiciona worker
+  - `sudo docker swarm join-token manager` = recupera o token
+
+  Services
+  - `docker service create --name <name> <image>` = subindo serviço
+    - `--replicas <number>` = para incluir réplicas
+    - `--network <name>` = para setar uma rede
+  - `docker service ls` = lista serviços
+  - `docker service rm <name>` = lista serviços
+  - `docker service inspect <id>` = inspeciona serviço
+  - `docker service ps <id>` = confere container rodando o serviço serviço
+  - `docker node update --availability drain <id>` = faz com que o serviço não receba mais ordens do manager
+  - `docker node update --availability active <id>` = faz com que o serviço volte a receber ordens do manager
+  - `docker service update --image <image> <service>` = atualiza imagem dos nodes com status active referentes a um dado serviço
+  - `docker service update --network-add <network> <service>` = para setar uma rede para um serviço já criado
+
+  - `docker network create --drive overlay <name>` = o tipo de rede para nodes do swarm é overlay
+
+  Compose com Swarm
+  - `docker stack deploy -c <file.yaml> <name>` = cria um serviço via compose
+  - `docker service scale <name>=<number>` = replica o serviço para number máquinas
 
   Dica para terminal
   - `Crtl + Shift + C` ou `Crtl + Insert` em vez de `Crtl + C`
