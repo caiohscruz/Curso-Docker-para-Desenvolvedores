@@ -105,7 +105,7 @@
   - `docker stack deploy -c <file.yaml> <name>` = cria um serviço via compose
   - `docker service scale <name>=<number>` = replica o serviço para number máquinas
 
-  Kubernetes
+  Kubernetes (modo imperativo)
   - `kubectl create deployment <nome> --image=<imagem>` = cria deployment
   - `kubectl get deployments` = lista deployments
   - `kubectl describe deployments` = exibe informações detalhadas sobre os deployments
@@ -124,6 +124,16 @@
   - `kubectl delete service <NOME>` = deleta o serviço (isso não deleta os pods)
   - `kubectl delete deployment <NOME>` = deleta o deployment
   
+  Kubernetes (modo declarativo)
+  - Chaves mais utilizadas
+    - apiVersion = versão utilizada da ferramenta
+    - kind = tipo do arquivo (Deployment, Service)
+    - metadata = descreve algum objeto inserindo chaves, tal como "name"
+    - replicas = número de réplicas de Nodes/Pods
+    - containers = definir as especificções de containers, tais como nome e imagem
+  - Comandos
+    - `kubectl apply -f <ARQUIVO>` = para executa o arquivo de deployment/service
+    - `kubectl delete -f <ARQUIVO>` = para deletar o deployment/service
 
 
   Dica para terminal
