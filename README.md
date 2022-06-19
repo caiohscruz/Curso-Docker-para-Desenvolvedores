@@ -105,6 +105,27 @@
   - `docker stack deploy -c <file.yaml> <name>` = cria um serviço via compose
   - `docker service scale <name>=<number>` = replica o serviço para number máquinas
 
+  Kubernetes
+  - `kubectl create deployment <nome> --image=<imagem>` = cria deployment
+  - `kubectl get deployments` = lista deployments
+  - `kubectl describe deployments` = exibe informações detalhadas sobre os deployments
+  - `kubectl get pods` = lista pods
+  - `kubectl describe pods` = exibe informações detalhadas sobre os pods
+  - `kubectl config view` = lista configuração do kubernetes
+  - `kubectl expose deployment <nome> --type=<tipo> --port=<port>` = criar um Service / expondo os pods
+    - `--type=LoadBalancer` = tipo mais comum
+  - `kubectl get services` = lista services
+  - `kubectl describe services` = exibe informações detalhadas sobre os services
+  - `kubectl scale deployment/<NOME> --replicas=<NUMERO>` = aumenta ou diminui o número de pods para uma aplicação
+  - `kubectl get rs` = lista as réplicas dos serviços rodando (desired, current, ready)
+  - `kubectl set image deployment/<NOME> <CONTAINER>=<IMAGEM:TAG>` = atualiza a imagem de um container 
+  - `kubectl rollout status deployment/<NOME>` = comando para verificar uma alteração
+  - `kubectl rollout undo deployment/<NOME>` = comando para desfazer a alteração
+  - `kubectl delete service <NOME>` = deleta o serviço (isso não deleta os pods)
+  - `kubectl delete deployment <NOME>` = deleta o deployment
+  
+
+
   Dica para terminal
   - `Crtl + Shift + C` ou `Crtl + Insert` em vez de `Crtl + C`
   - `Crtl + Shift + V` ou `Shift + Insert`em vez de `Crtl + V`
