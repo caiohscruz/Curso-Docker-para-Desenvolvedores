@@ -134,6 +134,9 @@
   - Comandos
     - `kubectl apply -f <ARQUIVO>` = para executa o arquivo de deployment/service
     - `kubectl delete -f <ARQUIVO>` = para deletar o deployment/service
+  - Trabalhando com Deployment e Service no mesmo arquivo
+    - Incluir `---` antes de cada um
+    - Recomenda-se que o Service venha antes
 
 
   Dica para terminal
